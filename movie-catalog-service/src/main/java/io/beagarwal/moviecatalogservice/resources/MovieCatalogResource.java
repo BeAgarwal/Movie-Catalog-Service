@@ -21,8 +21,8 @@ public class MovieCatalogResource {
     @Autowired
     private RestTemplate restTemplate;
 
-    @Autowired
-    private DiscoveryClient discoveryClient;
+//    @Autowired
+//    private DiscoveryClient discoveryClient;
 
     @Autowired
     private WebClient.Builder webClientbuilder;
@@ -31,7 +31,7 @@ public class MovieCatalogResource {
     public List<CatalogItem> getCatalog(@PathVariable("userID") String userID) {
 
         UserRating ratings = restTemplate.getForObject("http://rating-data-service/ratingdata/users/" + userID, UserRating.class);
-        return ratings.getUserRating().stream().map(rating -> {
+        return ratings.getRatings().stream().map(rating -> {
             //for each movie ID, call MovieInfo service and get details
             Movie movie = restTemplate.getForObject("http://movie-info-service/movies/" + rating.getMovieID(), Movie.class);
 

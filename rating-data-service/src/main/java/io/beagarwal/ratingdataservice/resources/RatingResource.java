@@ -22,11 +22,11 @@ public class RatingResource {
     @RequestMapping("users/{userID}")
     public UserRating getUserRating(@PathVariable("userID") String userID) {
         List<Rating> ratings = Arrays.asList(
-                new Rating("1", 3),
-                new Rating("2", 5)
+                new Rating("500", 3),
+                new Rating("505", 5)
         );
         UserRating userRating = new UserRating();
-        userRating.setUserRating(ratings);
+        userRating.setRatings(ratings);
         return userRating;
     }
 }
