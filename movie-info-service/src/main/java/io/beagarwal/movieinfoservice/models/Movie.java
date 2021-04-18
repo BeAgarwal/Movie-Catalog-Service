@@ -2,20 +2,22 @@ package io.beagarwal.movieinfoservice.models;
 
 public class Movie {
 
-    private String movieID;
+    private String movieId;
     private String name;
+    private String description;
 
-    public Movie(String movieID, String name) {
-        this.movieID = movieID;
+    public Movie(String movieId, String name, String description) {
+        this.movieId = movieId;
         this.name = name;
+        this.description = description;
     }
 
-    public String getMovieID() {
-        return movieID;
+    public String getMovieId() {
+        return movieId;
     }
 
-    public void setMovieID(String movieID) {
-        this.movieID = movieID;
+    public void setMovieId(String movieId) {
+        this.movieId = movieId;
     }
 
     public String getName() {
@@ -24,5 +26,13 @@ public class Movie {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 }
